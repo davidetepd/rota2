@@ -2,6 +2,7 @@ import { Text, SafeAreaView, StyleSheet, TextInput, Button, View, Image, Touchab
 import React, { useState } from 'react';
 import Index from './Index.js';
 import Cadastro from './Cadastro.js';
+import Vergrupo from './Vergrupo.js';
 
 
 
@@ -16,11 +17,8 @@ export default function App() {
     
     <SafeAreaView style={styles.container}>
 
+      <Vergrupo/>
       
-      <Cadastro/>
-
-
-
     </SafeAreaView>
   );
 }
