@@ -4,66 +4,104 @@ import React from 'react';
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-
       <View style={styles.view1}>
         <Image
           source={require('./assets/etelogotipo.png')}
           style={styles.logo}
         />
         <Text style={styles.paragraph}>
-          Trajeto Seguro
+          Atualize suas informações
         </Text>
-       
-        <Text style={styles.label}>Destino:</Text>
-        <TextInput
-          style={styles.inputnome}
-          value=""
-        />
-
-        <Text style={styles.label}>Modalidade:</Text>
-        <TextInput
-          style={styles.inputnome}
-          value=""
-        />
-
-        <Text style={styles.label}>Criador do grupo:</Text>
-        <TextInput
-          style={styles.inputnome}
-          value=""
-        />
-
-        <Text style={styles.label}>Horário de saída:</Text>
-        <TextInput
-          style={styles.inputnome}
-          value=""
-        />
-
-         <Text style={styles.label}>Vagas disponíveis de início:</Text>
-        <TextInput
-          style={styles.inputnome}
-          value=""
-        />
 
        
+        <Text style={styles.label}>Nome completo:</Text>
+        <TextInput
+          style={styles.inputnome}
+          value=""
+          placeholder="Digite seu nome completo"
+        />
 
-      </View>
+         <Text style={styles.label}>Telefone:</Text>
+        <TextInput
+          style={styles.inputnome}
+          value=""
+    
+        />
 
-   
         <View style={styles.row}>
+          <View style={styles.inputContainer}>
+            <Text style={styles.label}>Senha:</Text>
+            <TextInput
+              style={styles.input}
+              value=""
+              placeholder=""
+            />
+          </View>
+          <View style={styles.inputContainer}>
+            <Text style={styles.label}>CEP:</Text>
+            <TextInput
+              style={styles.input}
+              value=""
+              placeholder=""
+            />
+          </View>
+        </View>
+
+    
+        <View style={styles.row}>
+          <View style={styles.inputContainer}>
+            <Text style={styles.label}>Endereço:</Text>
+            <TextInput
+              style={styles.input}
+              value=""
+              placeholder=""
+            />
+          </View>
+          <View style={styles.inputContainer}>
+            <Text style={styles.label}>Complemento:</Text>
+            <TextInput
+              style={styles.input}
+              value=""
+              placeholder=""
+            />
+          </View>
+        </View>
+
+        
+        <View style={styles.row}>
+          <View style={styles.inputContainer}>
+            <Text style={styles.label}>Cidade:</Text>
+            <TextInput
+              style={styles.input}
+              value=""
+              placeholder=""
+            />
+          </View>
+          <View style={styles.inputContainer}>
+            <Text style={styles.label}>Estado:</Text>
+            <TextInput
+              style={styles.input}
+              value=""
+              placeholder=""
+            />
+          </View>
+        </View>
+
+          <View style={styles.row}>
 
           <TouchableOpacity style={styles.button}>
-          <Text style={{ color: "white", textAlign: "center" }}>Link do Grupo</Text>
+          <Text style={{ color: "white", textAlign: "center" }}>Enviar</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button}>
           <Text style={{ color: "white", textAlign: "center" }}>Voltar</Text>
         </TouchableOpacity>
+
           </View>
 
 
-
-      </SafeAreaView>
-
+      </View>
+    </SafeAreaView>
   );
 }
 
@@ -94,9 +132,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#023296',
     padding: 10,
     borderRadius: 10,
-    width: 150,
-    marginBottom: 50,
-    marginHorizontal: 20,
+    marginHorizontal: 10,
+    width: 100,
+    marginTop: 20,
   },
   input: {
     height: 40,

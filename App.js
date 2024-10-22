@@ -2,6 +2,10 @@ import { Text, SafeAreaView, StyleSheet, TextInput, Button, View, Image, Touchab
 import React, { useState } from 'react';
 import Index from './Index.js';
 import Cadastro from './Cadastro.js';
+import Vergrupo from './Vergrupo.js';
+import Header from './Header'
+import Criagrupo from './Criagrupo';
+import AltCadastro from './AltCadastro'
 
 
 
@@ -16,11 +20,10 @@ export default function App() {
     
     <SafeAreaView style={styles.container}>
 
+      <Header/>
+
+      <AltCadastro/>
       
-      <Cadastro/>
-
-
-
     </SafeAreaView>
   );
 }

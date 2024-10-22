@@ -26,7 +26,7 @@ export default function App() {
           value=""
         />
 
-        <Text style={styles.label}>Criador do grupo:</Text>
+        <Text style={styles.label}>Seu nome:</Text>
         <TextInput
           style={styles.inputnome}
           value=""
@@ -44,6 +44,12 @@ export default function App() {
           value=""
         />
 
+         <Text style={styles.label}>Link do WhatsApp do Grupo:</Text>
+        <TextInput
+          style={styles.inputnome}
+          value=""
+        />
+
        
 
       </View>
@@ -52,7 +58,7 @@ export default function App() {
         <View style={styles.row}>
 
           <TouchableOpacity style={styles.button}>
-          <Text style={{ color: "white", textAlign: "center" }}>Link do Grupo</Text>
+          <Text style={{ color: "white", textAlign: "center" }}>Enviar</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button}>

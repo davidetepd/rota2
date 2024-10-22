@@ -10,12 +10,8 @@ export default function App() {
           style={styles.logo}
         />
         <Text style={styles.paragraph}>
-          Faça o login para entrar na plataforma
+          Preencha com suas informações
         </Text>
-        <Text style={styles.minorparagraph}>
-          Insira seu usuário e senha abaixo
-        </Text>
-
        
         <Text style={styles.label}>Nome completo:</Text>
         <TextInput
