@@ -1,29 +1,48 @@
-import { Text, SafeAreaView, StyleSheet, TextInput, Button, View, Image, TouchableOpacity } from 'react-native';
+import { Text, SafeAreaView, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
-import Index from './Index.js';
-import Cadastro from './Cadastro.js';
-import Vergrupo from './Vergrupo.js';
-import Header from './Header'
+import Index from './Index.js'; // Tela de login
+import Vergrupo from './Vergrupo.js'; // Tela principal
+import Header from './Header';
 import Criagrupo from './Criagrupo';
-import AltCadastro from './AltCadastro'
-
-
-
-// You can import supported modules from npm
-import { Card } from 'react-native-paper';
-
-// or any files within the Snack
-import AssetExample from './components/AssetExample';
+import AltCadastro from './AltCadastro';
 
 export default function App() {
-  return (
-    
+  const [isLoggedIn, setIsLoggedIn] = useState(true); // Inicialmente, logado
+  const [currentView, setCurrentView] = useState('main'); // Estado para controlar a visualização
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setCurrentView('main'); // Reseta a visualização ao fazer logout
+  };
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+  };
+
+  const handleCreateGroup = () => {
+    setCurrentView('createGroup'); // Muda a visualização para 'Criar Grupo'
+  };
+
+  const handleAlterarCad = () => {
+    setCurrentView('Alterarcadastro'); // Muda a visualização para 'Alterar Cadastro'
+  };
+
+    return (
     <SafeAreaView style={styles.container}>
+      <Header onLogout={handleLogout} onCreateGroup={handleCreateGroup} onAltCadastro={handleAlterarCad} />
 
-      <Header/>
+      {isLoggedIn ? (
+        currentView === 'main' ? (
+          <Vergrupo /> // Exibe a tela principal
+ ) : currentView === 'createGroup' ? (
+          <Criagrupo/> // Exibe a tela de criação de grupo
+        ) : currentView === 'Alterarcadastro' ? (
+          <AltCadastro/> // Exibe a tela de alteração de cadastro
+        )  : null
 
-      <AltCadastro/>
-      
+      ) : (
+        <Index onLogin={handleLogin} /> // Exibe a tela de login
+      )}
     </SafeAreaView>
   );
 }
@@ -34,5 +53,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'white',
     padding: 8,
-  } 
+  },
 });

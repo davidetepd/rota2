@@ -1,42 +1,25 @@
-import { Text, SafeAreaView, StyleSheet, TextInput, Button, View, Image, TouchableOpacity } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 
-export default function App() {
+export default function Header({ onLogout, onCreateGroup, onAltCadastro}) {
   return (
-   
+    <View style={styles.row}>
+      <TouchableOpacity onPress={onCreateGroup} style={styles.button}>
+        <Text style={{ color: "white", textAlign: "center" }}>Criar Grupo</Text>
+      </TouchableOpacity>
 
-  
-        <View style={styles.row}>
+      <TouchableOpacity onPress ={onAltCadastro} style={styles.button}>
+        <Text style={{ color: "white", textAlign: "center" }}>Atualizar Cadastro</Text>
+      </TouchableOpacity>
 
-          <TouchableOpacity style={styles.button}>
-          <Text style={{ color: "white", textAlign: "center" }}>Novo Grupo</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.button}>
-          <Text style={{ color: "white", textAlign: "center" }}>Atualizar Cadastro</Text>
-        </TouchableOpacity>
-
-         <TouchableOpacity style={styles.buttonr}>
-          <Text style={{ color: "white", textAlign: "center", backgroundColor: 'red', borderColor: 'red' }}>Sair</Text>
-        </TouchableOpacity>
-
-          </View>
-
-
-
-    
-
+      <TouchableOpacity onPress={onLogout} style={styles.buttonr}>
+        <Text style={{ color: "white", textAlign: "center" }}>Sair</Text>
+      </TouchableOpacity>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'top',
-    backgroundColor: 'white',
-    padding: 0,
-  },
- 
   button: {
     backgroundColor: '#023296',
     padding: 10,
@@ -47,7 +30,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-   buttonr: {
+  buttonr: {
     backgroundColor: 'red',
     padding: 10,
     borderRadius: 10,
@@ -57,12 +40,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 
-
   row: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
-  
   },
-
 });

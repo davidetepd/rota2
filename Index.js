@@ -1,53 +1,45 @@
-import { Text, SafeAreaView, StyleSheet, TextInput, Button, View, Image, TouchableOpacity } from 'react-native';
+import { Text, SafeAreaView, StyleSheet, TextInput, TouchableOpacity, View, Image } from 'react-native';
 import React, { useState } from 'react';
-
-
 
 // You can import supported modules from npm
 import { Card } from 'react-native-paper';
 
-// or any files within the Snack
-import AssetExample from './components/AssetExample';
+export default function Index({ onLogin }) { // Recebe a função onLogin como prop
+  const [email, setEmail] = useState(''); // Estado para o email
+  const [senha, setSenha] = useState(''); // Estado para a senha
 
-export default function App() {
   return (
-    
     <SafeAreaView style={styles.container}>
-
-
-<View style= {styles.view1}>
-
-<Image
-        source={require('./assets/etelogotipo.png')} // Caminho para a imagem
-        style={styles.logo} // Estilos da imagem
-      />
-
-      <Text style={styles.paragraph}>
-        Faça o login para entrar na plataforma
-      </Text>
-
-      <Text style={styles.minorparagraph}>
-        Insira seu usuário e senha abaixo
-      </Text>
-
-      <Text style={styles.label}>Nome:</Text>
-      <TextInput
-        style={styles.input}
-        value=""
-        placeholder="Digite seu e-mail"
-      />
-
-      <Text style={styles.label}>Senha:</Text>
-      <TextInput
-        style={styles.input}
-        value=""
-        placeholder="Digite seu nome"
-      />
-
-      <TouchableOpacity style={styles.button}> Enviar </TouchableOpacity>
-
-</View>
-
+      <View style={styles.view1}>
+        <Image
+          source={require('./assets/etelogotipo.png')} // Caminho para a imagem
+          style={styles.logo} // Estilos da imagem
+        />
+        <Text style={styles.paragraph}>
+          Faça o login para entrar na plataforma
+        </Text>
+        <Text style={styles.minorparagraph}>
+          Insira seu usuário e senha abaixo
+        </Text>
+        <Text style={styles.label}>Nome:</Text>
+        <TextInput
+          style={styles.input}
+          value={email}
+          placeholder="Digite seu e-mail"
+          onChangeText={setEmail} // Atualiza o estado do email
+        />
+        <Text style={styles.label}>Senha:</Text>
+        <TextInput
+          style={styles.input}
+          value={senha}
+          placeholder="Digite sua senha"
+          secureTextEntry // Oculta a senha
+          onChangeText={setSenha} // Atualiza o estado da senha
+        />
+        <TouchableOpacity style={styles.button} onPress={onLogin}> {/* Chama onLogin ao pressionar */}
+          <Text style={{ color: 'white' }}>Enviar</Text>
+        </TouchableOpacity>
+      </View>
     </SafeAreaView>
   );
 }
@@ -71,22 +63,17 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
-
-    label: {
+  label: {
     marginBottom: 5,
     fontSize: 16,
   },
-
   button: {
     backgroundColor: '#023296', 
     padding: 10,
-    color: "white",
     borderRadius: 10,
     width: 100,
-    textAlign: "center",
-    
+    alignItems: 'center', // Centraliza o texto do botão
   },
-
   input: {
     height: 40,
     borderColor: 'gray',
@@ -96,17 +83,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderRadius: 10,
   },
-
-view1: {
+  view1: {
     flex: 1,
-    marginTop:0,
     justifyContent: 'center',
     alignItems: 'center',
   },
-
-   logo: {
+  logo: {
     height: 150,
-    width:200,
+    width: 200,
     marginBottom: 0,
   },
 });
