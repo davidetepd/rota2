@@ -55,9 +55,6 @@ export default function App() {
           <Text style={{ color: "white", textAlign: "center" }}>Link do Grupo</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.button}>
-          <Text style={{ color: "white", textAlign: "center" }}>Voltar</Text>
-        </TouchableOpacity>
           </View>
 
 
@@ -96,7 +93,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     width: 150,
     marginBottom: 50,
-    marginHorizontal: 20,
+    marginHorizontal: 120,
   },
   input: {
     height: 40,

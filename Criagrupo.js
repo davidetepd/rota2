@@ -1,7 +1,7 @@
 import { Text, SafeAreaView, StyleSheet, TextInput, Button, View, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 
-export default function App() {
+export default function Criagrupo({onVoltarIndex}) {
   return (
     <SafeAreaView style={styles.container}>
 
@@ -62,7 +62,7 @@ export default function App() {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button}>
-          <Text style={{ color: "white", textAlign: "center" }}>Voltar</Text>
+          <Text onPress={onVoltarIndex}style={{ color: "white", textAlign: "center" }}>Voltar</Text>
         </TouchableOpacity>
           </View>
 

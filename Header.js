@@ -2,6 +2,7 @@ import { Text, StyleSheet, TouchableOpacity, View } from 'react-native';
 import React from 'react';
 
 export default function Header({ onLogout, onCreateGroup, onAltCadastro}) {
+  
   return (
     <View style={styles.row}>
       <TouchableOpacity onPress={onCreateGroup} style={styles.button}>

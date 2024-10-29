@@ -27,17 +27,21 @@ export default function App() {
     setCurrentView('Alterarcadastro'); // Muda a visualização para 'Alterar Cadastro'
   };
 
+  const handleVoltarIndex = () => {
+    setCurrentView('main'); // Muda a visualização para 'Index'
+  };
+
     return (
     <SafeAreaView style={styles.container}>
-      <Header onLogout={handleLogout} onCreateGroup={handleCreateGroup} onAltCadastro={handleAlterarCad} />
+      <Header onLogout={handleLogout} onCreateGroup={handleCreateGroup} onAltCadastro={handleAlterarCad}/>
 
       {isLoggedIn ? (
         currentView === 'main' ? (
           <Vergrupo /> // Exibe a tela principal
  ) : currentView === 'createGroup' ? (
-          <Criagrupo/> // Exibe a tela de criação de grupo
+          <Criagrupo  onVoltarIndex={handleVoltarIndex}/> // Exibe a tela de criação de grupo
         ) : currentView === 'Alterarcadastro' ? (
-          <AltCadastro/> // Exibe a tela de alteração de cadastro
+          <AltCadastro   onVoltarIndex={handleVoltarIndex}/> // Exibe a tela de alteração de cadastro
         )  : null
 
       ) : (

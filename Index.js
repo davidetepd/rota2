@@ -39,6 +39,7 @@ export default function Index({ onLogin }) { // Recebe a função onLogin como p
         <TouchableOpacity style={styles.button} onPress={onLogin}> {/* Chama onLogin ao pressionar */}
           <Text style={{ color: 'white' }}>Enviar</Text>
         </TouchableOpacity>
+        
       </View>
     </SafeAreaView>
   );
