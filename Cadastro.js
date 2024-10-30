@@ -1,7 +1,7 @@
 import { Text, SafeAreaView, StyleSheet, TextInput, Button, View, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
 
-export default function App() {
+export default function Cadastro({onVoltarIndex}) {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.view1}>
@@ -103,6 +103,13 @@ export default function App() {
         <TouchableOpacity style={styles.button}>
           <Text style={{ color: "white", textAlign: "center" }}>Enviar</Text>
         </TouchableOpacity>
+
+        <TouchableOpacity onPress={onVoltarIndex} style={styles.button}>
+          <Text style={{ color: "white", textAlign: "center" }}>Voltar</Text>
+        </TouchableOpacity>
+
+
+
       </View>
     </SafeAreaView>
   );

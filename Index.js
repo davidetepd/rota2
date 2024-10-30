@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 // You can import supported modules from npm
 import { Card } from 'react-native-paper';
 
-export default function Index({ onLogin }) { // Recebe a função onLogin como prop
+export default function Index({onLogin, onCadastro}) { // Recebe a função onLogin como prop
   const [email, setEmail] = useState(''); // Estado para o email
   const [senha, setSenha] = useState(''); // Estado para a senha
 
@@ -38,6 +38,10 @@ export default function Index({ onLogin }) { // Recebe a função onLogin como p
         />
         <TouchableOpacity style={styles.button} onPress={onLogin}> {/* Chama onLogin ao pressionar */}
           <Text style={{ color: 'white' }}>Enviar</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.button} onPress={onCadastro}> {/* Chama cadastro ao pressionar */}
+          <Text style={{ color: 'white' }}>Cadastrar</Text>
         </TouchableOpacity>
         
       </View>
@@ -73,6 +77,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderRadius: 10,
     width: 100,
+    marginVertical: 10,
     alignItems: 'center', // Centraliza o texto do botão
   },
   input: {

@@ -62,7 +62,7 @@ export default function Criagrupo({onVoltarIndex}) {
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.button}>
-          <Text onPress={onVoltarIndex}style={{ color: "white", textAlign: "center" }}>Voltar</Text>
+          <Text onPress={onVoltarIndex} style={{ color: "white", textAlign: "center" }}>Voltar</Text>
         </TouchableOpacity>
           </View>
 

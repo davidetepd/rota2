@@ -5,9 +5,10 @@ import Vergrupo from './Vergrupo.js'; // Tela principal
 import Header from './Header';
 import Criagrupo from './Criagrupo';
 import AltCadastro from './AltCadastro';
+import Cadastro from './Cadastro';
 
 export default function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true); // Inicialmente, logado
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // Inicialmente, logado
   const [currentView, setCurrentView] = useState('main'); // Estado para controlar a visualização
 
   const handleLogout = () => {
@@ -31,8 +32,14 @@ export default function App() {
     setCurrentView('main'); // Muda a visualização para 'Index'
   };
 
+  const handleCadastro = () => {
+    console.log("Botão de Cadastro clicado");
+    setCurrentView('cadastro'); // Muda a visualização para 'Cadastro'
+  };
+
     return (
     <SafeAreaView style={styles.container}>
+
       <Header onLogout={handleLogout} onCreateGroup={handleCreateGroup} onAltCadastro={handleAlterarCad}/>
 
       {isLoggedIn ? (
@@ -42,13 +49,18 @@ export default function App() {
           <Criagrupo  onVoltarIndex={handleVoltarIndex}/> // Exibe a tela de criação de grupo
         ) : currentView === 'Alterarcadastro' ? (
           <AltCadastro   onVoltarIndex={handleVoltarIndex}/> // Exibe a tela de alteração de cadastro
+        )  : currentView === 'cadastro' ? (
+          <Cadastro  onVoltarIndex={handleVoltarIndex} /> // Exibe a tela de cadastro
         )  : null
-
       ) : (
-        <Index onLogin={handleLogin} /> // Exibe a tela de login
-      )}
+        <Index onLogin={handleLogin} onCadastro={handleCadastro} /> // Exibe a tela de login
+      )
+      
+      }
     </SafeAreaView>
   );
+
+  
 }
 
 const styles = StyleSheet.create({
