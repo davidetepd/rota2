@@ -1,7 +1,13 @@
-import { Text, SafeAreaView, StyleSheet, TextInput, Button, View, Image, TouchableOpacity } from 'react-native';
+import { Text, SafeAreaView, StyleSheet, TextInput, TouchableOpacity, View, Image } from 'react-native';
 import React from 'react';
 
-export default function Cadastro({onVoltarIndex}) {
+export default function Cadastro({ onVoltarIndex }) {
+  const handleSubmit = () => {
+    // Aqui você pode adicionar a lógica para enviar os dados
+    console.log("Dados enviados"); // Simulação do envio dos dados
+    onVoltarIndex(); // Volta para a tela inicial após o envio
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.view1}>
@@ -12,7 +18,7 @@ export default function Cadastro({onVoltarIndex}) {
         <Text style={styles.paragraph}>
           Preencha com suas informações
         </Text>
-       
+
         <Text style={styles.label}>Nome completo:</Text>
         <TextInput
           style={styles.inputnome}
@@ -20,7 +26,6 @@ export default function Cadastro({onVoltarIndex}) {
           placeholder="Digite seu nome completo"
         />
 
-        
         <View style={styles.row}>
           <View style={styles.inputContainer}>
             <Text style={styles.label}>E-mail:</Text>
@@ -40,7 +45,6 @@ export default function Cadastro({onVoltarIndex}) {
           </View>
         </View>
 
-      
         <View style={styles.row}>
           <View style={styles.inputContainer}>
             <Text style={styles.label}>Senha:</Text>
@@ -60,7 +64,6 @@ export default function Cadastro({onVoltarIndex}) {
           </View>
         </View>
 
-    
         <View style={styles.row}>
           <View style={styles.inputContainer}>
             <Text style={styles.label}>Endereço:</Text>
@@ -80,7 +83,6 @@ export default function Cadastro({onVoltarIndex}) {
           </View>
         </View>
 
-        
         <View style={styles.row}>
           <View style={styles.inputContainer}>
             <Text style={styles.label}>Cidade:</Text>
@@ -100,15 +102,13 @@ export default function Cadastro({onVoltarIndex}) {
           </View>
         </View>
 
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity onPress={handleSubmit} style={styles.button}>
           <Text style={{ color: "white", textAlign: "center" }}>Enviar</Text>
         </TouchableOpacity>
 
         <TouchableOpacity onPress={onVoltarIndex} style={styles.button}>
           <Text style={{ color: "white", textAlign: "center" }}>Voltar</Text>
         </TouchableOpacity>
-
-
 
       </View>
     </SafeAreaView>
@@ -125,12 +125,6 @@ const styles = StyleSheet.create({
   paragraph: {
     margin: 24,
     fontSize: 18,
-    fontWeight: 'bold',
-    textAlign: 'center',
-  },
-  minorparagraph: {
-    margin: 10,
-    fontSize: 14,
     fontWeight: 'bold',
     textAlign: 'center',
   },
@@ -158,7 +152,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
-  
   },
   inputContainer: {
     flex: 1,
@@ -176,7 +169,6 @@ const styles = StyleSheet.create({
   },
   view1: {
     flex: 1,
-    marginTop: 0,
     justifyContent: 'center',
     alignItems: 'center',
   },

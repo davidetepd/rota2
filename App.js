@@ -37,7 +37,7 @@ export default function App() {
     setCurrentView('cadastro'); // Muda a visualização para 'Cadastro'
   };
 
-    return (
+  return (
     <SafeAreaView style={styles.container}>
 
       <Header onLogout={handleLogout} onCreateGroup={handleCreateGroup} onAltCadastro={handleAlterarCad}/>
@@ -45,22 +45,22 @@ export default function App() {
       {isLoggedIn ? (
         currentView === 'main' ? (
           <Vergrupo /> // Exibe a tela principal
- ) : currentView === 'createGroup' ? (
-          <Criagrupo  onVoltarIndex={handleVoltarIndex}/> // Exibe a tela de criação de grupo
+        ) : currentView === 'createGroup' ? (
+          <Criagrupo onVoltarIndex={handleVoltarIndex}/> // Exibe a tela de criação de grupo
         ) : currentView === 'Alterarcadastro' ? (
-          <AltCadastro   onVoltarIndex={handleVoltarIndex}/> // Exibe a tela de alteração de cadastro
-        )  : currentView === 'cadastro' ? (
-          <Cadastro  onVoltarIndex={handleVoltarIndex} /> // Exibe a tela de cadastro
-        )  : null
+          <AltCadastro onVoltarIndex={handleVoltarIndex}/> // Exibe a tela de alteração de cadastro
+        ) : currentView === 'cadastro' ? (
+          <Cadastro onVoltarIndex={handleVoltarIndex} /> // Exibe a tela de cadastro
+        ) : null
       ) : (
-        <Index onLogin={handleLogin} onCadastro={handleCadastro} /> // Exibe a tela de login
-      )
-      
-      }
+        currentView === 'cadastro' ? (
+          <Cadastro onVoltarIndex={handleVoltarIndex} /> // Permite acessar a tela de cadastro sem login
+        ) : (
+          <Index onLogin={handleLogin} onCadastro={handleCadastro} /> // Exibe a tela de login
+        )
+      )}
     </SafeAreaView>
   );
-
-  
 }
 
 const styles = StyleSheet.create({
